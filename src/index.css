@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "Playfair Bold";
+  src: url("./assets/fonts/playfair-display.bold.ttf");
+}
+@font-face {
+  font-family: "Playfair Regular";
+  src: url("./assets/fonts/playfair-display.regular.ttf");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("./assets/fonts/lato.regular.ttf");
+}
+
+@theme {
+  --font-PFB: "Playfair Bold";
+  --font-PFR: "Playfair Regular";
+  --font-Lato: "Lato";
+}
