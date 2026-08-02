@@ -1,6 +1,6 @@
 import FWCover from "../../assets/FWcover.png"
-import FMCover from "../../assets/FMCover.png"
-import CSCover from "../../assets/CSCover.png"
+import FMCover from "../../assets/FMcover.png"
+import CSCover from "../../assets/CScover.png"
 
 export const CATEGORIES = [
     {
