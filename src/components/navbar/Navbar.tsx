@@ -4,12 +4,16 @@ import NavbarLinks from "./NavbarLinks";
 import SearchBar from "./SearchBar";
 import MobileMenu from "./MobileMenu";
 
-const Navbar = () => {
+interface NavbarProps {
+    isLandingPage?: boolean
+}
+
+const Navbar = ({ isLandingPage }: NavbarProps) => {
     const [mobileOpen, setMobileOpen] = useState(false);
 
     return (
         <>
-            <nav className="absolute z-5 top-0 px-3 md:px-10 pt-16 text-white font-Lato w-full flex flex-col">
+            <nav className={`${isLandingPage ? "absolute" : "bg-[#008E93] py-3"} z-5 top-0 px-3 md:px-10 pt-16 text-white font-Lato w-full flex flex-col`}>
                 <div className="flex items-center justify-center md:justify-start gap-3 md:gap-5 xl:gap-10">
                     <button
                         className="lg:hidden size-5 md:size-10 shrink-0 flex items-center justify-center"
@@ -18,7 +22,7 @@ const Navbar = () => {
                         }
                     </button>
                     <h1 className="font-PFR text-2xl md:text-5xl xl:text-6xl md:ml-2 lg:ml-8 md:mr-5">
-                        <span className="text-[#008E93]">M</span>ODEVA
+                        <span className={`${isLandingPage ? "text-[#008E93]" : ""}`}>M</span>ODEVA
                     </h1>
                     <NavbarLinks />
                     <div className="flex gap-3">

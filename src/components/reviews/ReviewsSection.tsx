@@ -8,7 +8,7 @@ const ReviewsSection = () => {
                 <div className="flex gap-10 animate-marquee">
                     {REVIEWS.length < 10 ? Array.from({ length: 10 }).map((_, index) => {
                         index = index % REVIEWS.length
-                        return <ReviewCard key={index} name={REVIEWS[index].name} date={REVIEWS[index].date} review={REVIEWS[index].review} comment={REVIEWS[index].comment} />
+                        return <ReviewCard name={REVIEWS[index].name} date={REVIEWS[index].date} review={REVIEWS[index].review} comment={REVIEWS[index].comment} />
                     }) : (
                         REVIEWS.map((review, index) => (
                             <ReviewCard key={index} name={review.name} date={review.date} review={review.review} comment={review.comment} />
