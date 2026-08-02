@@ -17,3 +17,18 @@
   --font-PFR: "Playfair Regular";
   --font-Lato: "Lato";
 }
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
