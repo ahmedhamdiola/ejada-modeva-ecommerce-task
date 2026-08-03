@@ -3,6 +3,7 @@ import { Bars3Icon, ShoppingCartIcon, UserIcon, XMarkIcon } from "@heroicons/rea
 import NavbarLinks from "./NavbarLinks";
 import SearchBar from "./SearchBar";
 import MobileMenu from "./MobileMenu";
+import { useNavigate } from "react-router-dom";
 
 interface NavbarProps {
     isLandingPage?: boolean
@@ -10,7 +11,7 @@ interface NavbarProps {
 
 const Navbar = ({ isLandingPage }: NavbarProps) => {
     const [mobileOpen, setMobileOpen] = useState(false);
-
+    const navigate = useNavigate();
     return (
         <>
             <nav className={`${isLandingPage ? "absolute" : "bg-[#008E93] py-3"} z-5 top-0 px-3 md:px-10 pt-16 text-white font-Lato w-full flex flex-col`}>
@@ -21,7 +22,7 @@ const Navbar = ({ isLandingPage }: NavbarProps) => {
                         {mobileOpen ? <XMarkIcon className="size-5 md:size-10 text-white" /> : <Bars3Icon className="size-5 md:size-10 text-white" />
                         }
                     </button>
-                    <h1 className="font-PFR text-2xl md:text-5xl xl:text-6xl md:ml-2 lg:ml-8 md:mr-5">
+                    <h1 className="font-PFR text-2xl md:text-5xl xl:text-6xl md:ml-2 lg:ml-8 md:mr-5 cursor-pointer" onClick={() => navigate("/")}>
                         <span className={`${isLandingPage ? "text-[#008E93]" : ""}`}>M</span>ODEVA
                     </h1>
                     <NavbarLinks />

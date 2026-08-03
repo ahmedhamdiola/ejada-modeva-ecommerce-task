@@ -8,8 +8,8 @@ interface DashboardTableProps {
 
 const DashboardTable = ({ products, onDelete, onEdit }: DashboardTableProps) => {
     return (
-        <div className="hidden overflow-x-auto rounded-xl border lg:block">
-            <table className="min-w-full">
+        <div className="hidden rounded-xl border lg:block">
+            <table className="w-full">
                 <thead className="bg-gray-100">
                     <tr>
                         <th className="p-5 text-left">Image</th>
