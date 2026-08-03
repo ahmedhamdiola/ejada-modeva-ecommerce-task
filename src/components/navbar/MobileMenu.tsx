@@ -13,20 +13,16 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
 
     return (
         <>
-            {/* Backdrop */}
             <div
                 className={`lg:hidden fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
                     }`}
                 onClick={onClose}
             />
-
-            {/* Drawer */}
             <aside
                 className={`lg:hidden fixed top-0 left-0 h-full w-72 md:w-80 bg-white text-gray-800 z-50 flex flex-col
                     transform transition-transform duration-300 ease-in-out
                     ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
             >
-                {/* Header */}
                 <div className="flex items-center justify-between px-6 py-5 border-b border-gray-200">
                     <span className="font-PFR text-3xl">
                         <span className="text-[#008E93]">M</span>ODEVA
@@ -35,15 +31,10 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                         <XMarkIcon className="size-7 text-black" />
                     </button>
                 </div>
-
-                {/* Search Bar — shown only on sm (hidden on md+) */}
                 <div className="md:hidden px-6 py-4 border-b border-gray-200">
                     <SearchBar />
                 </div>
-
-                {/* Nav Links */}
                 <nav className="flex flex-col px-6 py-4 gap-1 flex-1 overflow-y-auto">
-                    {/* Catalog accordion */}
                     <div>
                         <button
                             className="flex items-center justify-between w-full py-3 text-lg font-Lato border-b border-gray-200"
@@ -70,8 +61,6 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                             </ul>
                         </div>
                     </div>
-
-                    {/* Regular links */}
                     {NAVBAR_LINKS.map((link) => (
                         <a
                             key={link.id}
