@@ -1,19 +1,16 @@
-import type { ProductInterface } from './data'
+import type { Product } from '../../types'
 import DashboardCard from './DashboardCard'
 
 interface DashboardCardsContainerProps {
-    products: ProductInterface[],
-    onDelete: (id: number) => void,
-    onEdit: (updatedProduct: ProductInterface) => void
-
+    products: Product[],
 }
 
 
-const DashboardCardsContainer = ({ products, onDelete, onEdit }: DashboardCardsContainerProps) => {
+const DashboardCardsContainer = ({ products }: DashboardCardsContainerProps) => {
     return (
         <div className="lg:hidden">
             {products.map((product) => (
-                <DashboardCard key={product.id} product={product} onDelete={onDelete} onEdit={() => onEdit} />
+                <DashboardCard key={product.id} product={product} />
             ))}
         </div>
     )

@@ -1,12 +1,10 @@
+import type { Product } from '../../types'
 import DashboardTableEntry from './DashboardTableEntry'
-import type { ProductInterface } from './data'
 interface DashboardTableProps {
-    products: ProductInterface[],
-    onDelete: (id: number) => void,
-    onEdit: (updatedProduct: ProductInterface) => void
+    products: Product[],
 }
 
-const DashboardTable = ({ products, onDelete, onEdit }: DashboardTableProps) => {
+const DashboardTable = ({ products }: DashboardTableProps) => {
     return (
         <div className="hidden rounded-xl border lg:block">
             <table className="w-full">
@@ -16,14 +14,14 @@ const DashboardTable = ({ products, onDelete, onEdit }: DashboardTableProps) => 
                         <th className="text-left">Name</th>
                         <th className="text-left">Category</th>
                         <th className="text-left">Price</th>
-                        <th className="text-left">Stock</th>
+                        <th className="text-left">Sold Amount</th>
                         <th className="text-center">Actions</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     {products.map((product) => (
-                        <DashboardTableEntry key={product.id} product={product} onDelete={onDelete} onEdit={onEdit} />
+                        <DashboardTableEntry key={product.id} product={product} />
                     ))}
                 </tbody>
             </table>

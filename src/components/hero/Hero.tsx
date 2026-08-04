@@ -6,7 +6,7 @@ import HeroScrollButton from "./HeroScrollButton"
 const Hero = () => {
     return (
         <section className="relative overflow-hidden">
-            <img src={MainCover} alt="Main Cover" className="w-full object-cover" />
+            <img src={MainCover} alt="Main Cover" className="w-full object-cover min-h-[500px]" />
             <div className="absolute bottom-2 px-4 md:px-10 flex flex-col xl:flex-row xl:items-end gap-6 xl:gap-15 ">
                 <div className="flex flex-col items-center md:items-start gap-4">
                     <HeroHeading />
