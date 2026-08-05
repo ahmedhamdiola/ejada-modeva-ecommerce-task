@@ -20,7 +20,7 @@ export const MODAL_EDIT_FIELDS: FieldInterface[] = [
         label: "Price",
         name: "price",
         placeholder: "Enter product price",
-        type: "number",
+        type: "text",
     },
     {
         id: "soldAmount",
@@ -58,7 +58,7 @@ export const MODAL_ADD_FIELDS: FieldInterface[] = [
         label: "Price",
         name: "price",
         placeholder: "Enter product price",
-        type: "number",
+        type: "text",
     },
     {
         id: "soldAmount",
