@@ -4,7 +4,7 @@ const HeroScrollButton = () => {
     return (
         <div className="flex w-full justify-center">
             <a
-                href="#"
+                href="#categories"
                 className="flex items-center justify-center gap-1.5 text-white font-Lato text-xs md:text-lg xl:text-xl transition-transform hover:scale-[1.1] xl:translate-x-2/1 whitespace-nowrap"
             >
                 <span>SCROLL DOWN</span>

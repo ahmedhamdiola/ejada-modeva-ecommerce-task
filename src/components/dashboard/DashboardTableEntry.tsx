@@ -10,8 +10,6 @@ interface DashboardTableEntryProps {
 
 const DashboardTableEntry = ({ product }: DashboardTableEntryProps) => {
     const deleteProduct = useDeleteProduct();
-    // const editProduct = useEditProduct();
-
     const [isEdit, setIsEdit] = useState(false);
 
     return (
