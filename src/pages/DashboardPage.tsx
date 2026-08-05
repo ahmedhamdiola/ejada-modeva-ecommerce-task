@@ -3,9 +3,12 @@ import DashboardTable from "../components/dashboard/DashboardTable";
 import DashboardCardsContainer from "../components/dashboard/DashboardCardsContainer";
 import Button from "../components/ui/Button";
 import useProducts from "../hooks/useProducts";
+import { useState } from "react";
+import AddProductModal from "../components/modals/AddProductModal";
 
 const DashboardPage = () => {
     const { data: products, isError, isLoading } = useProducts();
+    const [isAdd, setIsAdd] = useState(false);
     return (
         <>
             {isError && <p className="text-red-500 h-screen">Error loading products</p>}
@@ -13,11 +16,12 @@ const DashboardPage = () => {
             <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
                 <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <h1 className="text-3xl font-bold">Products</h1>
-                    <Button title="ADD PRODUCT" Icon={PlusIcon} onClick={() => { console.log("Add Product clicked") }} />
+                    <Button title="ADD PRODUCT" Icon={PlusIcon} onClick={() => setIsAdd(true)} />
                 </div>
                 {products && <DashboardTable products={products} />}
                 {products && <DashboardCardsContainer products={products} />}
             </div>
+            {isAdd && <AddProductModal onClose={() => setIsAdd(!isAdd)} />}
         </>
     );
 };

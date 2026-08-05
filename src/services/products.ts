@@ -35,8 +35,8 @@ const addProduct = async (product: Product) => {
     await axios.post(API_LINK, product)
 }
 
-const editProduct = async (product: { id: number, product: Product }) => {
-    await axios.put<Product>(`${API_LINK}/${product.id}`, product.product)
+const editProduct = async (product: Product) => {
+    await axios.put<Product>(`${API_LINK}/${product.id}`, product)
 };
 
 const deleteProduct = async (id: number) => {
