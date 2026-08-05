@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { addProduct } from "../../services/products";
+import { toast } from "react-toastify";
 
 const useAddProduct = () => {
     const queryClient = useQueryClient();
@@ -10,6 +11,11 @@ const useAddProduct = () => {
             queryClient.invalidateQueries({
                 queryKey: ["products"],
             });
+            toast.success("Product added successfully.");
+        },
+        onError: (error) => {
+            const message = error instanceof Error ? error.message : "Failed to add product.";
+            toast.error(message);
         },
     });
 };

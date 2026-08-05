@@ -21,6 +21,7 @@ const EditProductModal = ({ onClose, product }: EditProductModalProps) => {
             price: values.price ?? currentProduct.price,
             category: values.category ?? currentProduct.category,
             soldAmount: values.soldAmount ? Number(values.soldAmount) : currentProduct.soldAmount,
+            image: values.image ? values.image : currentProduct.image,
         };
 
         editProduct.mutate(modifiedProduct, {

@@ -20,7 +20,7 @@ export const MODAL_EDIT_FIELDS: FieldInterface[] = [
         label: "Price",
         name: "price",
         placeholder: "Enter product price",
-        type: "text",
+        type: "number",
     },
     {
         id: "soldAmount",
@@ -33,8 +33,16 @@ export const MODAL_EDIT_FIELDS: FieldInterface[] = [
         id: "category",
         label: "Category",
         name: "category",
-        placeholder: "Enter product category",
-        type: "text",
+        placeholder: "Select product category",
+        type: "select",
+        options: ["Men", "Women", "Shoes", "Accessories"],
+    },
+    {
+        id: "image",
+        label: "Image",
+        name: "image",
+        placeholder: "Upload product image",
+        type: "file",
     },
 ];
 
@@ -58,7 +66,7 @@ export const MODAL_ADD_FIELDS: FieldInterface[] = [
         label: "Price",
         name: "price",
         placeholder: "Enter product price",
-        type: "text",
+        type: "number",
     },
     {
         id: "soldAmount",
@@ -71,15 +79,16 @@ export const MODAL_ADD_FIELDS: FieldInterface[] = [
         id: "category",
         label: "Category",
         name: "category",
-        placeholder: "Enter product category",
-        type: "text",
+        placeholder: "Select product category",
+        type: "select",
+        options: ["Men", "Women", "Shoes", "Accessories"],
     },
     {
         id: "image",
-        label: "Image URL",
+        label: "Image",
         name: "image",
-        placeholder: "Enter image URL",
-        type: "text",
+        placeholder: "Upload product image",
+        type: "file",
     },
     {
         id: "rating",
@@ -96,4 +105,5 @@ export interface FieldInterface {
     name: keyof Product,
     placeholder: string,
     type: string,
+    options?: string[],
 }

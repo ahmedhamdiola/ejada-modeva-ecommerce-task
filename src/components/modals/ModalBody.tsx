@@ -20,6 +20,26 @@ const ModalBody = ({ fields, product }: ModalBody) => {
                                 className="w-full rounded border border-gray-300 focus:outline-none px-5 py-2"
                                 placeholder={field.placeholder}
                                 defaultValue={defaultValue as string | number | undefined}
+                                required
+                            />
+                        ) : field.type === "select" ? (
+                            <select
+                                name={field.name}
+                                className="w-full rounded border border-gray-300 focus:outline-none px-5 py-2"
+                                defaultValue={defaultValue as string | number | undefined}
+                                required
+                            >
+                                {(field.options ?? ["Men", "Women", "Shoes", "Accessories"]).map(option => (
+                                    <option key={option} value={option}>{option}</option>
+                                ))}
+                            </select>
+                        ) : field.type === "file" ? (
+                            <input
+                                type="file"
+                                name={field.name}
+                                accept="image/*"
+                                className="w-full rounded border border-gray-300 focus:outline-none px-5 py-2"
+
                             />
                         ) : (
                             <input
@@ -28,6 +48,7 @@ const ModalBody = ({ fields, product }: ModalBody) => {
                                 className="w-full rounded border border-gray-300 focus:outline-none px-5 py-2"
                                 placeholder={field.placeholder}
                                 defaultValue={defaultValue as string | number | undefined}
+                                required
                             />
                         )}
                     </div>

@@ -7,13 +7,23 @@ interface ButtonProps {
     onClick?: () => void
     type?: "button" | "submit" | "reset"
     className?: string
+    disabled?: boolean
+    isLoading?: boolean
 }
 
-const Button = ({ title, Icon, onClick, type = "button", className }: ButtonProps) => {
+const Button = ({ title, Icon, onClick, type = "button", className, disabled = false, isLoading = false }: ButtonProps) => {
     return (
-        <button type={type} className={`bg-[#008E93] text-white p-5 w-fit flex gap-2 cursor-pointer hover:bg-[#015e61] transition-all ${className}`} onClick={onClick}>
-            {title}
-            {Icon && <Icon className='size-6' />}
+        <button
+            type={type}
+            disabled={disabled}
+            className={`bg-[#008E93] text-white p-5 w-fit flex items-center gap-2 transition-all cursor-pointer ${disabled ? "opacity-60 cursor-not-allowed" : "hover:bg-[#015e61]"} ${className}`}
+            onClick={onClick}
+        >
+            <span className="inline-flex items-center gap-2">
+                {title}
+                {isLoading && <span className="h-5 w-5 animate-spin rounded-full border-2 border-white/30 border-t-white" />}
+            </span>
+            {Icon && !isLoading && <Icon className='size-6' />}
         </button>
     )
 }
